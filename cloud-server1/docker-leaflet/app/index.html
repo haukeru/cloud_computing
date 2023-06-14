@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<title>Leaflet Shipments Example</title>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
+	<style>
+		#map {
+			width: auto;
+			height: 800px;
+		}
+
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255, 255, 255, 0.8);
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+		}
+
+		.info p {
+			margin: 0 0 5px;
+			color: #777;
+		}
+
+		.legend {
+			text-align: left;
+			line-height: 18px;
+			color: #555;
+		}
+
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+
+		/* General table styling */
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		table th,
+		table td {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+
+		table tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		table tr:hover {
+			background-color: #ddd;
+		}
+
+		table th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		/* Specific style for unique-api-cells-table header */
+		#unique-api-calls-table th {
+			background-color: #FF6347;
+			/* You can change this to any color you prefer */
+		}
+
+		/* Flex container for tables */
+		#tables-container {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		/* Specific style for unique-api-calls-table width */
+		#unique-api-calls-table {
+			width: auto;
+		}
+
+		#api-calls-table {
+			flex-grow: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="map"></div>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="data/plz-5stellig.geojson"></script>
+	<script type="text/javascript" src="data/plz-3stellig.geojson"></script>
+	<script src="bundle.js"></script>
+	<div id="tables-container">
+		<div id="unique-api-calls">
+			<table id="unique-api-calls-table">
+				<tr>
+					<th>API Host</th>
+					<th>Counter</th>
+				</tr>
+			</table>
+		</div>
+		<div id="api-calls">
+			<table id="api-calls-table">
+				<tr>
+					<th>API Call</th>
+					<th>Time</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+</body>
+
+</html>

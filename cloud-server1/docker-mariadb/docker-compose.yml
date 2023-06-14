@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: mariadb:latest
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data.csv:/docker-entrypoint-initdb.d/data.csv
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+    networks: 
+      - wi_g001_bridge
+
+networks:
+  wi_g001_bridge:
+    external: true

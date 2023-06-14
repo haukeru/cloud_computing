@@ -1,0 +1,18 @@
+{
+  "name": "leaflet-shipment",
+  "version": "1.0.0",
+  "description": "Leaflet",
+  "main": "app.js",
+  "scripts": {
+    "start": "beefy app.js:bundle.js 3333",
+    "bundle": "browserify app.js -o bundle.js"
+  },
+  "dependencies": {
+    "leaflet": "^1.4.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "beefy": "^2.1.8",
+    "browserify": "^16.2.3"
+  }
+}
